@@ -47,14 +47,15 @@ jQuery(document).ready(function() {
     //---------------------------//Boton que se encarga de realizar la busqueda
         $('#bbuscar').on('click', function(){
 	 	//funcrestablecer();
-                alert("Hola");
-              /*  if($('#Stipo').val()!="")
+              
+                
+                if($('#Stipo').val()!="")
                 {
                     if($('#tdato').val()!="")
                     {
                        $("#mensaje").removeClass('alert-success').removeClass('alert-danger').html(mensaje);
                        
-                       var url = "usuarioAjax.php"; // El script a dónde se realizará la petición.
+                       var url = "TblpersonaAjax.php"; // El script a dónde se realizará la petición.
 			var dataString = $('#frmActualiza').serialize();
                         //alert("Datos"+dataString);    
                        var valores = new Array();
@@ -70,7 +71,7 @@ jQuery(document).ready(function() {
                                
 				  //alert("Hola"+data);
 					if(data!=="" && data!=0){
-						mostrarMensaje('Afiliado Encontrado',true);
+						mostrarMensaje('Usuario registrado',true);
                                                 //mostrarMensaje(data,true);
                                                
                                                valores=data.split(",");//pasa la cadena a un arreglo separada por el caracter 
@@ -118,20 +119,20 @@ jQuery(document).ready(function() {
                     }
                     else
                     {
-                       funcrestablecer();
+                       //funcrestablecer();
                        mostrarMensaje('Ingrese el valor a buscar',false);
                         
                     }
                 }
                 else
                 {
-                   funcrestablecer();
+                   //funcrestablecer();
                    mostrarMensaje('Debe seleccionar el tipo de busqueda',false);
                     
                     
                 }
 
-*/
+
 	 });
 
 
@@ -332,9 +333,81 @@ function cargar_tipoCargo()
 }
 
 
-
-
-
-
+function funcrestablecer()
+{
+    $('#badjuntar').attr("disabled", true);//deshabilitamos el bonton para adjuntar anexos
+    $('#tidunica').val("");
+    $('#tpnombre').val("");
+    $('#tsnombre').val("");
+    $('#tpapellido').val("");
+    $('#tsapellido').val("");
+                                                
+    $('#tfechanac').val("");
+    $('#tsexo').val("");
+    $('#ttipodoc').val("");
+    $('#tdocumento').val("");
+                                                
+    $('#departamento').val("");
+    $('#departamentoCod').val("");
+    $('#tmunicipio').val("");
+    $('#tmunicipioCod').val("");
+    $('#tdireccion').val("");
+    $('#ttelefono').val("");
+    $('#tcelular').val("");
+    $('#temail').val("");
+    marcaCampo="";
+    $('#tnumcontrol').val("");
+    
+    
+    //------------
+    //$('#tdatosp').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+    
+    //_______________
+    $('#beditar1').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar1").addClass('btn-primary');
+    
+    $('#beditar2').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar2").addClass('btn-primary');
+    
+    $('#beditar3').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar3").addClass('btn-primary');
+    
+    $('#beditar4').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar4").addClass('btn-primary');
+    
+    $('#beditar5').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar5").addClass('btn-primary');
+    
+    $('#beditar6').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar6").addClass('btn-primary');
+    
+    $('#beditar7').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar7").addClass('btn-primary');
+    
+    $('#beditar8').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar8").addClass('btn-primary');
+    
+    $('#beditar9').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar9").addClass('btn-primary');
+    
+    $('#beditar10').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar10").addClass('btn-primary');
+    
+    $('#beditar11').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar11").addClass('btn-primary');
+    
+    $('#beditar12').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar12").addClass('btn-primary');
+    
+    $('#beditar13').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar13").addClass('btn-primary');
+    
+    $('#beditar14').removeClass('btn-primary').removeClass('btn-warning');
+    $("#beditar14").addClass('btn-primary');
+    
+    $("#mensaje").removeClass('alert-success').removeClass('alert-danger').html(mensaje);
+    
+    
+}
 
 });
