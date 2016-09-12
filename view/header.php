@@ -4,7 +4,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8"/>
-        <title>SIACU_2</title>
+        <title>SIACU</title>
 <!---  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- para datepiker -->
