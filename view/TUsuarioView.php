@@ -4,7 +4,7 @@
 ?>
     <body>
         <form name="frmLogin2" id="frmLogin2" action="<?php echo $helper->url("TUsuario","crear"); ?>" method="post" class="col-lg-5">
-            <h3>Añadir usuario</h3>
+            <h3>Añadir  tres</h3>
             <hr/>
             Usuario: <input type="text" id="id_persona" name="id_persona" class="form-control"/>
             Login: <input type="text" id="login" name="login" class="form-control"/>
