@@ -57,12 +57,53 @@ class TblpersonaController extends ControladorBase{
         $this->redirect("Tblpersona", "index");
     }
     
-    
+    //----------------------
     public function hola(){
         $tblpersonas=new TblpersonaModel();
         $Tblper=$tblpersonas->getUnTblpersona();
         var_dump($tblper);
     }
+    
+    //-----------------
+        //---------------------------------
+    public function buscarUsuario($tipo,$dato){
+           
+            $persona=new Tblpersona();
+            if($tipo=='2')
+            {
+                $columna="CONTRATO_AFIL";
+                $allusers=$persona->getBy($columna,$dato); 
+            }   
+            else
+            {
+                $columna="DOC_AFILIADO";
+                $columna1="TIPO_DOC";
+                
+               
+                $allusers=$persona->getByEsp($columna, $dato, $columna1, $tipo);
+               
+                
+            }
 
+            
+            if(count($allusers)>0)
+            {
+              
+                //return 1;
+                return $allusers;
+               
+            }
+            else
+            {
+              
+              
+              return 0;
+               
+
+               
+            }
+            return $allusers;
+       
+      }
 }
 ?>
