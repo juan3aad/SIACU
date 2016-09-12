@@ -170,7 +170,7 @@ class Tblpersona extends EntidadBase{
     public function save(){
         $query="INSERT INTO tblpersona (id_persona,id_estado_civil,
             id_sexo,id_municipio,direccion,fecha_nacimiento,ruta_fotografia,
-            tipo_identificacion, numero_identificacion,primer_apellido,segundo_apellido,
+            tipo_identificacion, numero_identificacion,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,
             telefono,celular,email)
                 VALUES(NULL,
                        '".$this->id_estado_civil."',
