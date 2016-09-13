@@ -14,7 +14,26 @@ if(isset($_POST["tdato"]))
         
             foreach($val1 as $key)
             {
-               $mensaje1= $key->id_persona.",".$key->id_estado_civil.",".$key->id_sexo.",".$key->id_municipio.",".$key->direccion.",".$key->fecha_nacimiento.",".$key->ruta_fotografia.",".$key->tipo_identificacion.",".$key->numero_identificacion.",".$key->primer_nombre.",".mb_convert_encoding($key->segundo_nombre,"UTF-8").",".mb_convert_encoding($key->primer_apellido,"UTF-8").",".$key->segundo_apellido.",".$key->telefono.",".$key->celular.",".$key->email;
+               $mensaje1= $key->id_persona.",".
+                       $key->primer_nombre.",".
+                       mb_convert_encoding($key->segundo_nombre,"UTF-8").",".
+                       mb_convert_encoding($key->primer_apellido,"UTF-8").",".
+                       $key->segundo_apellido.",".
+                       $key->fecha_nacimiento.",".
+                       $key->cod_sexo.",".
+                       $key->tipo_identificacion.",".
+                       $key->numero_identificacion.",".
+                       
+                       $key->id_estado_civil.",".
+                       
+                       $key->id_municipio.",".
+                       $key->direccion.",".
+                       $key->telefono.",".
+                       $key->celular.",".
+                       $key->email.",".
+                       $key->ruta_fotografia;
+                    
+                       
                //$mensaje1="hola";
                echo $mensaje1;
                 //echo "<option value=\"$key\">".mb_convert_encoding($value, "UTF-8")."</option>";
