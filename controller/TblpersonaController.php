@@ -76,8 +76,8 @@ class TblpersonaController extends ControladorBase{
             }   
             else
             {
-                $columna="DOC_AFILIADO";
-                $columna1="TIPO_DOC";
+                $columna="numero_identificacion";
+                $columna1="tipo_identificacion";
                 
                
                 $allusers=$persona->getByEsp($columna, $dato, $columna1, $tipo);
