@@ -14,8 +14,8 @@ if(isset($_POST["tdato"]))
         
             foreach($val1 as $key)
             {
-               $mensaje1= $key['CONTRATO_AFIL'].",".$key['DOC_AFILIADO'].",".$key['TIPO_DOC'].",".$key['PRIMER_NOM'].",".$key['SEGUNDO_NOM'].",".$key['PRIMER_APE'].",".$key['SEGUNDO_APE'].",".$key['COD_SEXO'].",".$key['FECHA_NAC_AFIL']->format('Y-m-d').",".mb_convert_encoding($key['DESCRIPCION_DEPAR'],"UTF-8").",".mb_convert_encoding($key['DESCRIP_CIU'],"UTF-8").",".$key['TELRES_AFIL'].",".$key['DIREC_AFIL'].",".$key['COD_CIUDAD'].",".$key['COD_DEPAR'];
-               // $mensaje1= $key['CONTRATO_AFIL'].",".$key['DOC_AFILIADO'].",".$key['TIPO_DOC'];
+               $mensaje1= $key->id_persona.",".$key->id_estado_civil.",".$key->id_sexo.",".$key->id_municipio.",".$key->direccion.",".$key->fecha_nacimiento.",".$key->ruta_fotografia.",".$key->tipo_identificacion.",".$key->numero_identificacion.",".$key->primer_nombre.",".mb_convert_encoding($key->segundo_nombre,"UTF-8").",".mb_convert_encoding($key->primer_apellido,"UTF-8").",".$key->segundo_apellido.",".$key->telefono.",".$key->celular.",".$key->email;
+               //$mensaje1="hola";
                echo $mensaje1;
                 //echo "<option value=\"$key\">".mb_convert_encoding($value, "UTF-8")."</option>";
                // echo "<option value=\"$key['CONTRATO_AFIL']\">".$key->CONTRATO_AFIL."</option>";
