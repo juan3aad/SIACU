@@ -23,7 +23,32 @@ class EntidadBase{
     
 
 
-    //_____________________________
+    //-------------------
+        
+    public function getByEsp($column,$value,$column1,$value1){
+         
+             
+        //-----------
+        $resultSet = array(); 
+        
+        //$query=$this->db->query("SELECT * FROM $this->table WHERE $column='$value' and $column1='$value1'");
+        $query=$this->db->query("select persona.id_persona,persona.id_estado_civil, sexo.cod_sexo, persona.id_municipio,persona.direccion,persona.fecha_nacimiento,persona.ruta_fotografia,persona.tipo_identificacion, persona.numero_identificacion, persona.primer_nombre,persona.segundo_nombre,persona.primer_apellido,persona.segundo_apellido, persona.telefono,persona.celular,persona.email 
+                from tblsexo sexo INNER JOIN $this->table persona on sexo.id_sexo=persona.id_sexo WHERE $column='$value' and $column1='$value1'");
+        while($row = $query->fetch_object()) {
+           $resultSet[]=$row;
+        }
+        
+
+        
+        
+        
+        
+        return $resultSet;
+       
+    }
+    
+    
+    //-------------------
     
 
     public function getAllEsp($column1,$tabla2,$column2){
