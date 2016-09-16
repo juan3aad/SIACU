@@ -260,6 +260,8 @@
                                 <input type="hidden" id="tsapellidoAnt" name="tsapellidoAnt" class="form-control input-lg" readonly="readonly">
 
                             </div>   
+                        
+                             
                     </div>
             
                     
@@ -291,11 +293,22 @@
                                 <input type="text" id="tdocumento" name="tdocumento" class="form-control input-lg" readonly="readonly">
                                 <input type="hidden" id="tdocumentoAnt" name="tdocumentoAnt" class="form-control input-lg" readonly="readonly">    
                             </div>
+                               
+                          
                            
                             <div id="mensajeAlert" class="alert">
                             <!--  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
                             </div>
                             </div>
+                      <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <span class="label label-success">Estado Civil:<button class="btn btn-primary btn-xs" type="button" id="beditar15" name="beditar15" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-pencil"></span></button></span> 
+                                <input type="text" id="testadocivil" name="testadocivil" class="form-control input-lg" readonly="readonly">
+                                <input type="hidden" id="testadocivilAnt" name="testadocivilAnt" class="form-control input-lg" readonly="readonly">
+
+                            </div> 
+                          
+                      </div>
                     <!-- FIN DATOS PERSONALES 2 -->
                      <p></p>
                              <div class="row">

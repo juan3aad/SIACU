@@ -68,7 +68,7 @@ jQuery(document).ready(function() {
 			   },
 			   success: function(data)
 			   {
-                               
+                               debugger;
 				  //alert("Hola"+data);
 					if(data!=="" && data!=0){
 						mostrarMensaje('Usuario registrado',true);
@@ -78,27 +78,27 @@ jQuery(document).ready(function() {
                                                 
                                                 
                                                 $('#tidunica').val(valores[0]);
-                                                $('#tpnombre').val(valores[3]);
-                                                $('#tsnombre').val(valores[4]);
-                                                $('#tpapellido').val(valores[5]);
-                                                $('#tsapellido').val(valores[6]);
+                                                $('#tpnombre').val(valores[1]);
+                                                $('#tsnombre').val(valores[2]);
+                                                $('#tpapellido').val(valores[3]);
+                                                $('#tsapellido').val(valores[4]);
                                                 
-                                                $('#tfechanac').val(valores[8]);
-                                                $('#tsexo').val(valores[7]);
-                                                $('#ttipodoc').val(valores[2]);
-                                                $('#tdocumento').val(valores[1]);
+                                                $('#tfechanac').val(valores[5]);
+                                                $('#tsexo').val(valores[6]);
+                                                $('#ttipodoc').val(valores[7]);
+                                                $('#tdocumento').val(valores[8]);
                                                 
                                                 $('#tdepartamento').val(valores[9]);
-                                                $('#tdepartamentoCod').val(valores[14]);
-                                                cargar_municipios(valores[14]);
-                                                $('#tmunicipio').val(valores[10]);
-                                                $('#tmunicipioCod').val(valores[13]);
-                                                $('#tdireccion').val(valores[12]);
-                                                $('#ttelefono').val(valores[11]);
+                                                $('#tdepartamentoCod').val(valores[10]);
+                                                //cargar_municipios(valores[14]);
+                                                $('#tmunicipio').val(valores[11]);
+                                                $('#tmunicipioCod').val(valores[12]);
+                                                $('#tdireccion').val(valores[13]);
+                                                $('#ttelefono').val(valores[14]);
                                                 //$('#temail').val(valores[2]);
                                                $('#badjuntar').attr("disabled", false);//habilitamos el bonton para adjuntar anexos
 						//window.location="./index.php?controller=Tblcampo&action=index";
-                                                mostrarArchivos1(valores[0].trim());
+                                                //mostrarArchivos1(valores[0].trim());
 											
 					}
 					else{
@@ -112,6 +112,7 @@ jQuery(document).ready(function() {
                                                mostrarMensaje('Error afiliado no registrado',false);
                                         	
 					}
+                                        
 			   }
 			 });
                        
