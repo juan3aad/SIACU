@@ -26,6 +26,9 @@ if(isset($_POST["tdato"]))
                        
                        $key->id_estado_civil.",".
                        
+                       $key->des_departamento.",".
+                       $key->id_departamento.",".
+                       $key->des_municipio.",".
                        $key->id_municipio.",".
                        $key->direccion.",".
                        $key->telefono.",".
