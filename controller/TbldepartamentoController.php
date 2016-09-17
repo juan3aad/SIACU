@@ -1,5 +1,5 @@
 <?php
-class T_DepartamentoController extends ControladorBase{
+class TbldepartamentoController extends ControladorBase{
     
     public function __construct() {
         parent::__construct();
@@ -8,7 +8,7 @@ class T_DepartamentoController extends ControladorBase{
     public function index(){
         
         //Creamos el objeto T_Departamento
-        $t_departamento=new T_Departamento();
+        $t_departamento=new Tbldepartamento();
         
         //Conseguimos todos los Departamentos
         //$alldepartamentos=$t_departamento->getAll("id_departamento");
@@ -34,7 +34,7 @@ class T_DepartamentoController extends ControladorBase{
             
             $save=$t_departamento->save();
         }
-        $this->redirect("T_Departamento", "index");
+        $this->redirect("Tbldepartamento", "index");
     }
     
     public function borrar(){
@@ -45,12 +45,12 @@ class T_DepartamentoController extends ControladorBase{
             $departamento=new T_Departamento();
             $departamento->deleteBy("id_departamento",$id_departamento); 
         }
-        $this->redirect("T_Departamento", "index");
+        $this->redirect("Tbldepartamento", "index");
     }
     
     
     public function hola(){
-        $t_departamentos=new T_DepartamentoModel();
+        $t_departamentos=new TbldepartamentoModel();
         $tbldep=$t_departamentos->getUnTbldepartamento();
         var_dump($tbldep);
     }

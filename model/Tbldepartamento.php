@@ -1,5 +1,5 @@
 <?php
-class T_Departamento extends EntidadBase{
+class Tbldepartamento extends EntidadBase{
     private $id_departamento;
     private $cod_departamento;
     private $des_departamento;
@@ -8,7 +8,7 @@ class T_Departamento extends EntidadBase{
     
     
     public function __construct() {
-        $table="t_departamento";
+        $table="tbldepartamento";
         parent::__construct($table);
     }
     
@@ -53,7 +53,7 @@ class T_Departamento extends EntidadBase{
 
     public function save(){
 
-        $query="INSERT INTO t_departamento (id_departamento,cod_departamento,des_departamento,id_pais)
+        $query="INSERT INTO tbldepartamento (id_departamento,cod_departamento,des_departamento,id_pais)
                 VALUES(NULL,
                       '".$this->cod_departamento."',
                       '".$this->des_departamento."',
