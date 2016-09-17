@@ -1,9 +1,9 @@
 <?php
-class T_DepartamentoModel extends ModeloBase{
+class TbldepartamentoModel extends ModeloBase{
 	private $table;
 
 	public function __construct(){
-		$this->table="t_departamento";
+		$this->table="tbldepartamento";
 		parent::__construct($this->table);
 	}
 
