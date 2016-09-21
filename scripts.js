@@ -1,4 +1,10 @@
 jQuery(document).ready(function() {
+    
+    /*LA SIGUIENTE CONDICION SE ENCARGA DE VERIFICAR SI EXISTE EL FORMULARIO frmlistaPerosna*/
+    if ($('#frmlistaPersona').length) {
+        verlistado(); 
+    }
+    
     //--FUNCION PARA VERIFICAR SI SE CARGO EL FORMULARIO
     if ($('#frmActualiza').length) {//verificando si existe el formulario departamento
 
@@ -194,7 +200,7 @@ jQuery(document).ready(function() {
 				  
 					if(data==1){
 						mostrarMensaje('Usuario Encontrado',true);
-						window.location="./index.php?controller=Tblpersona&action=index2";
+						window.location="./index.php?controller=Tblpersona&action=index";
 											
 					}
 					else{
@@ -831,7 +837,25 @@ function cargar_municipios(valor1)
 	});
 
 }
-
+//--------------------
+//---FUNCION PARA VISUALIZAR EL LISTADO PAGINADO DE AFILIADOS
+function verlistado(){ //FUNCION PARA MOSTRAR EL LISTADO EN EL INDEX POR JQUERY
+              var randomnumber=Math.random()*11;
+            $.post("./index.php?controller=Tblpersona&action=index2", {
+                randomnumber:randomnumber
+            }/*, function(data){
+              $("#contenido").html(data);
+            }*/
+             );
+            
+            //----------------
+            $('#tabla_listaPersonas').dataTable( { //CONVERTIMOS NUESTRO LISTADO DE LA FORMA DEL JQUERY.DATATABLES- PASAMOS EL ID DE LA TABLA
+                "sPaginationType": "full_numbers" //DAMOS FORMATO A LA PAGINACION(NUMEROS)
+             } );
+        
+            //debugger;
+            
+            }
 
 //--------------
 //----FUNCION PARA RESTABLECER LOS CONTROLES DE LOS FORMULARIOS
@@ -1125,6 +1149,7 @@ function validarVacios(vdato)
         return 1;
     }
 }
+
 
 //-----------FUNCION PARA CON¿FIRMAR QUE LOS DATOS SE VAN ACTUALIZAR
 
