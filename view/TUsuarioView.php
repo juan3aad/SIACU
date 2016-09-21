@@ -19,6 +19,7 @@
             <hr/>
         </div>
         <section class="col-lg-7 usuario" style="height:400px;overflow-y:scroll;">
+                     
             <?php foreach($allusers as $user) { //recorremos el array de objetos y obtenemos el valor de las propiedades ?>
                 <?php echo $user->id_usuario; ?> 
                 <?php echo $user->id_persona; ?> 
@@ -31,6 +32,8 @@
                 </div>
                 <hr/>
             <?php } ?>
+                
+          
         </section>
         
     </body>

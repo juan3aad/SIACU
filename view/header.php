@@ -13,7 +13,7 @@
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <!---  -->  
   
-  <link rel="stylesheet" type="text/css" href="../cujacal/bootstrap/css/styleForm.css"> 
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/styleForm.css"> 
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="./bootstrap/css/styleFooter.css">
@@ -21,12 +21,17 @@
   
   <script src="./bootstrap/js/bootstrap1.min.js"></script>
   
-  <!--ventanas de alerta -->
+  
+<!--ventanas de alerta -->
 <link href="./bootstrap/css/alertify.min.css" rel="stylesheet" type="text/css"/>
 <link href="./bootstrap/css/themes/bootstrap.rtl.min.css" rel="stylesheet" type="text/css"/>
 <script src="./bootstrap/js/alertify.min.js" type="text/javascript"></script>
 
-<!-- -->
+<!--LOS SIGUIENTES SE ADICIONARON PARA EL DATA TABLES -->
+<link href="./bootstrap/css/styleTable.css" rel="stylesheet" type="text/css"/> 
+<link  href="./bootstrap/css/demo_table.css" rel="stylesheet" type="text/css" />
+<script src="./bootstrap/js/jquery.dataTables.js" type="text/javascript"></script>
+
 
         <style>
             input{
@@ -84,8 +89,8 @@
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="buscarAfiliado.php">Registro<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="./index.php?controller=T_Persona&action=index">Datos Personales</a></li>
-                <li><a href="#">Formación Académica</a></li>
-                <li><a href="#">Experiencia Laboral</a></li>
+                <li><a href="#">Formación A</a></li>
+                <li><a href="#">Experiencia </a></li>
                 
               </ul> 
             </li> 
@@ -99,6 +104,7 @@
 
         if($_SESSION["validacion"]==1){
           ?>
+            <!--
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ubicación<span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -127,6 +133,8 @@
                 
               </ul> 
           </li>
+            
+            -->
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administración<span class="caret"></span></a>
               <ul class="dropdown-menu">
