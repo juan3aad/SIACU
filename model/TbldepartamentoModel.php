@@ -9,7 +9,7 @@ class TbldepartamentoModel extends ModeloBase{
 
 	//Metodos de consulta
 	public function getUnDepartamento(){
-		$query="SELECT * FROM t_departamento WHERE id_departamento='1'";
+		$query="SELECT * FROM tbldepartamento WHERE id_departamento='1'";
 		$tbldepartamento=$this->ejecutarSql($query);
 		return $tbldepartamento;
 	}

@@ -25,7 +25,7 @@ class TbldepartamentoController extends ControladorBase{
         if(isset($_POST["des_departamento"])){
             
             //Creamos un departamento
-            $t_departamento=new T_Departamento();
+            $t_departamento=new Tbldepartamento();
             $t_departamento->setCod_Departamento($_POST["cod_departamento"]);
             $t_departamento->setDes_Departamento($_POST["des_departamento"]);
             $t_departamento->setId_Pais($_POST["id_pais"]);
@@ -42,7 +42,7 @@ class TbldepartamentoController extends ControladorBase{
         if(isset($_GET["id_departamento"])){ 
             $id_departamento=(int)$_GET["id_departamento"];
             
-            $departamento=new T_Departamento();
+            $departamento=new Tbldepartamento();
             $departamento->deleteBy("id_departamento",$id_departamento); 
         }
         $this->redirect("Tbldepartamento", "index");
@@ -56,7 +56,7 @@ class TbldepartamentoController extends ControladorBase{
     }
 
     public function cargarDepartamentos(){
-         $t_departamento=new T_Departamento();
+         $t_departamento=new Tbldepartamento();
         
         //Conseguimos todos los departamentos
         $alldepartamentos=$t_departamento->getAll("id_departamento");

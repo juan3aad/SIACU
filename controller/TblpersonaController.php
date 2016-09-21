@@ -8,10 +8,10 @@ class TblpersonaController extends ControladorBase{
     public function index(){
         
         //Creamos el objeto Tblpersona
-        $tblpersona=new Tblpersona();
+        //$tblpersona=new Tblpersona();
         
         //Conseguimos todas los personas
-        $allpersonas=$tblpersona->getAll("id_persona");
+        //$allpersonas=$tblpersona->getAll("id_persona");
        
         //Cargamos la vista index y le pasamos valores
         $this->view("tblpersona",array(
@@ -19,6 +19,21 @@ class TblpersonaController extends ControladorBase{
             "Hola"    =>"Soy Víctor Robles"
         ));
     }
+    
+    public function index2(){
+        //Creamos el objeto Tblpersona
+        $tblpersona=new Tblpersona();
+        
+        //Conseguimos todas los personas
+        $allpersonas=$tblpersona->getAll("id_persona");
+        
+        //Cargamos la vista index y le pasamos valores
+        $this->view("paginacionPersona",array(
+                   "allpersonas"=>$allpersonas, 
+                  "Hola"=>"juan Agreda"
+        ));
+    }
+            
     
     public function crear(){
         if(isset($_POST["primer_nombre"])){
@@ -105,5 +120,28 @@ class TblpersonaController extends ControladorBase{
             return $allusers;
        
       }
+      //-------------
+      public function prueba()
+      {
+          
+            $tblpersona=new Tblpersona();
+             //Conseguimos todas los personas
+            $allpersonas=$tblpersona->getAll("id_persona");
+            return $allpersonas;
+          
+      }
+      //-----------------------
+       public function actualizar($scriptValor,$id_persona){
+       $res=0;
+       if(isset($_POST["tpnombre"]))//Verifica si existe el campo para proceder a realizar el ingreso del registro
+       {
+           $campo= new Tblpersona();
+           
+           //retornamos el resultado
+           $res=$campo->update($scriptValor,$id_persona);
+           
+       }
+       return $res;
+   }
 }
 ?>

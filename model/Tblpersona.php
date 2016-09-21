@@ -192,6 +192,77 @@ class Tblpersona extends EntidadBase{
         //$this->db()->error;
         return $save;
     }
+    
+    public function update($valuesSet,$filtro){
+        
+        /*$error=0;
+        $params = array(1, "some data");   
+        sqlsrv_query($this->db(),"BEGIN",$params);
+    
+        //$query="INSERT INTO Tblnovedad (seccampo,ant_valor,nue_valor,contrato_afil,fecha_radicacion) VALUES ".$scriptValor.";";
+        
+        $query1="UPDATE Tblpersona set ".$valuesSet." where id_persona='".$filtro."'";
+             //$params = array(1, "some data");
+             $save =sqlsrv_query($this->db(),$query,$params);
+        if(!$save)
+            $error=1;
+        
+        if($error==1)//ocurrio error al momento de insertar los registros
+        {
+            sqlsrv_query($this->db(),"ROLLBACK",$params);
+            return 1;
+        }
+        else
+        {
+            sqlsrv_query($this->db(),"COMMIT",$params);
+            return 0;
+        }*/
+        //------------------------
+        $error=0;
+        
+        /*$save->autocommit(false);
+        
+        try {
+             $query1="UPDATE Tblpersona set ".$valuesSet." where id_persona='".$filtro."'";
+            $save=$this->db()->query($query1);
+            $save->commit();
+            return 1;
+            
+        } catch (Exception $exc) {
+            $save->rollback();
+            //echo $exc->getTraceAsString();
+             return 0;
+        }
+        */
+
+
+        $query1="UPDATE Tblpersona set ".$valuesSet." where id_persona='".$filtro."'";
+        $save=$this->db()->query($query1);
+        
+        if(!$save)
+        $error=1;
+ 
+        if($error==1)//ocurrio error al momento de insertar los registros
+        {
+            //sqlsrv_query($this->db(),"ROLLBACK",$params);
+            return 1;
+           // return $query1;
+        }
+        else
+        {
+            //sqlsrv_query($this->db(),"COMMIT",$params);
+            return 0;
+            //return $query1;
+        }
+        
+        //------
+        
+        
+  
+        
+        
+        
+    }
 
 }
 ?>
