@@ -67,9 +67,9 @@ class TblpersonaController extends ControladorBase{
             $secpersona=(int)$_GET["id"];
             
             $persona=new Tblpersona();
-            $persona->deleteBy("secpersona",$secpersona); 
+            $persona->deleteBy("id_persona",$secpersona); 
         }
-        $this->redirect("Tblpersona", "index");
+        $this->redirect("Tblpersona", "index2");
     }
     
     //----------------------

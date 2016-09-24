@@ -1,5 +1,17 @@
 jQuery(document).ready(function() {
     
+    /*CUANDO SE REALIZA CLIC EN EL BOTON ACTUALIZAR AFILIADO CARGA UNA VENTA*/
+    
+     $('#beditarAfil').on('click', function(){
+         
+         //funcrestablecer();
+              alert($('#beditarAfil').attr("name"));
+                
+               
+         
+         
+     });
+    
     /*LA SIGUIENTE CONDICION SE ENCARGA DE VERIFICAR SI EXISTE EL FORMULARIO frmlistaPerosna*/
     if ($('#frmlistaPersona').length) {
         verlistado(); 
