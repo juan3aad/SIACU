@@ -1,16 +1,37 @@
 jQuery(document).ready(function() {
     
     /*CUANDO SE REALIZA CLIC EN EL BOTON ACTUALIZAR AFILIADO CARGA UNA VENTA*/
+    $(".hrow").click(function(){
+	var row= $(this).parent().parent();
+	test(row);
+    });
     
-     $('#beditarAfil').on('click', function(){
-         
-         //funcrestablecer();
-              alert($('#beditarAfil').attr("name"));
-                
-               
-         
-         
-     });
+    function test(row){
+	var celdas= row.children();
+        //Obtenemos la celda 1 y la colocamos en el div con id resultado_2
+        //alert($(celdas[2]).html());
+        
+        //resultado.append($(celdas[0]).html()); 
+        $('#tmid').val($(celdas[2]).html().trim());
+        $('#tmestadocivil').val($(celdas[3]).html().trim());
+        $('#tmgenero').val($(celdas[4]).html().trim());
+        $('#tmmunicipio').val($(celdas[5]).html().trim());
+        $('#tmdireccion').val($(celdas[6]).html().trim());
+        $('#tmfechanac').val($(celdas[7]).html().trim());
+        $('#tmtipodoc').val($(celdas[8]).html().trim());
+        $('#tmdocumento').val($(celdas[9]).html().trim());
+        $('#tmpnombre').val($(celdas[10]).html().trim());
+        $('#tmsnombre').val($(celdas[11]).html().trim());
+        $('#tmpapellido').val($(celdas[12]).html().trim());
+        $('#tmsapellido').val($(celdas[13]).html().trim());
+        $('#tmtelefono').val($(celdas[14]).html().trim());
+        $('#tmcelular').val($(celdas[15]).html().trim());
+        $('#tmemail').val($(celdas[16]).html().trim());
+        
+        
+    }
+    
+     
     
     /*LA SIGUIENTE CONDICION SE ENCARGA DE VERIFICAR SI EXISTE EL FORMULARIO frmlistaPerosna*/
     if ($('#frmlistaPersona').length) {
@@ -179,8 +200,9 @@ jQuery(document).ready(function() {
 
 	 });
 
-
-	
+    $('#beditarAfil').on('click', function(){
+        alert('Realizo clic');
+    });     
     
     
     
@@ -614,7 +636,7 @@ $('#benviar1').on('click', function(){
 
 
 
-         cambiaHeadModal('Cambiar primer nombre');//para cambiar el titulo
+         cambiaHeadModal('Cambiar primer nombre','1');//para cambiar el titulo
 
 
      });
@@ -624,11 +646,11 @@ $('#benviar1').on('click', function(){
           //PARA MOSTRAR CAPAS
           mostrarCapa('1');
           //--------------------
-          $('#tdatosp').val($('#tsnombre').val());
+          //$('#tdatosp').val($('#tsnombre').val());
 
 
-          cambiaHeadModal('Cambiar segundo nombre');
-
+          cambiaHeadModal('Cambiar segundo nombre','2');
+          debugger;
 
      });
          //--ACTUALIZANDO Primer Apellido
@@ -639,7 +661,7 @@ $('#benviar1').on('click', function(){
           $('#tdatosp').val($('#tpapellido').val());
 
 
-          cambiaHeadModal('Cambiar Primer Apellido');
+          cambiaHeadModal('Cambiar Primer Apellido','1');
 
      });
           //--ACTUALIZANDO Segundo Apellido
@@ -648,7 +670,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('1');
          $('#tdatosp').val($('#tsapellido').val());
 
-          cambiaHeadModal('Cambiar Segundo Apellido');
+          cambiaHeadModal('Cambiar Segundo Apellido','1');
 
 
      });
@@ -661,7 +683,7 @@ $('#benviar1').on('click', function(){
          $('#tmfechanac').val($('#dfechanac').val());
 
 
-          cambiaHeadModal('Cambiar Fecha de Nacimiento');
+          cambiaHeadModal('Cambiar Fecha de Nacimiento','1');
 
 
      });
@@ -673,7 +695,7 @@ $('#benviar1').on('click', function(){
          //--------------------
 
 
-          cambiaHeadModal('Cambiar Sexo');
+          cambiaHeadModal('Cambiar Sexo','1');
 
 
      });
@@ -683,7 +705,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('7');
          //$('#tmfechanac').val($('#dfechanac').val());
          //--------------------
-          cambiaHeadModal('Cambiar Tipo de Documento');
+          cambiaHeadModal('Cambiar Tipo de Documento','1');
 
 
      });
@@ -693,7 +715,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('8');
          $('#tmdocumento').val($('#tdocumento').val());
          //--------------------
-          cambiaHeadModal('Cambiar Documento');
+          cambiaHeadModal('Cambiar Documento','1');
 
 
      });
@@ -704,7 +726,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('9');
          //$('#tmunicipio').val($('#sMunicipio').val());
          //--------------------
-          cambiaHeadModal('Actualizando Municipio');
+          cambiaHeadModal('Actualizando Municipio','1');
 
      });
 
@@ -714,7 +736,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('10');
          $('#tmdireccion').val($('#tdireccion').val());
          //--------------------
-          cambiaHeadModal('Actualizando Dirección');
+          cambiaHeadModal('Actualizando Dirección','1');
 
      });
 
@@ -724,7 +746,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('11');
          $('#tmtelefono').val($('#ttelefono').val());
          //--------------------
-          cambiaHeadModal('Actualizando Telefono');
+          cambiaHeadModal('Actualizando Telefono','1');
 
      });
          //--ACTUALIZANDO EMAIL
@@ -733,7 +755,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('12');
          $('#tmemail').val($('#temail').val());
          //--------------------
-          cambiaHeadModal('Actualizando Email');
+          cambiaHeadModal('Actualizando Email','1');
 
      });
      //--ACTUALIZANDO CELULAR
@@ -742,7 +764,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('13');
          $('#tmcelular').val($('#tcelular').val());
          //--------------------
-          cambiaHeadModal('Actualizando Celular');
+          cambiaHeadModal('Actualizando Celular','1');
 
      });
 
@@ -752,7 +774,7 @@ $('#benviar1').on('click', function(){
          mostrarCapa('14');
          //$('#tmunicipio').val($('#sMunicipio').val());
          //--------------------
-          cambiaHeadModal('Actualizando Departamento');
+          cambiaHeadModal('Actualizando Departamento','1');
 
      });
 
@@ -973,10 +995,22 @@ function EsEmail(w_email) {
 }
 
 //------FUNCION PARA CAMBIAR EL TITULO DE LA MODAL
-function cambiaHeadModal(titulo){
-                $("#TituloModal").removeClass('alert-success').removeClass('alert-danger').html(titulo);
+function cambiaHeadModal(titulo,opc1){
+    alert ('hola');
+    debugger;
+                switch(opc1)
+                {
+                    case '1':
+                        $("#TituloModal").removeClass('alert-success').removeClass('alert-danger').html(titulo);
+                        break;
+                    case '2':
+                        $("#TituloModal2").removeClass('alert-success').removeClass('alert-danger').html(titulo);
+                        break;
+                }
+              debugger;  
 
             }
+
  //---------------------
  //------FUNCION PARA MOSTRAR Y OCULTAR CAPAS DE LAS VENTANAS MODALES
 function mostrarCapa(capa)
@@ -1129,6 +1163,12 @@ function mostrarCapa(capa)
             break;
     }
 }
+//----------Funcion que reciebe como parametro el titulo de la ventana modal que se desea actualizar
+function cambiaHeadModal(titulo){
+                $("#TituloModal").removeClass('alert-success').removeClass('alert-danger').html(titulo);
+               
+            }
+
 //------FUNCION PARA MOSTRAR LOS MENSAJES DE ALERTA EN EL DIV
 function mostrarMensaje(mensaje, ok){
                 $("#mensaje").removeClass('alert-success').removeClass('alert-danger').html(mensaje);
